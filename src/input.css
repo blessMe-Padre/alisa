@@ -1,0 +1,118 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Импорт кастомных стилей для компонентов */
+@import './block/button.css';
+@import './block/menu-button.css';
+@import './block/menu.css';
+@import './block/swiper.css';
+@import './block/sliders.css';
+@import './block/scrool-top.css';
+@import './block/video.css';
+@import './block/hero.css';
+
+/* Импорт TailWind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Зарегистрируйте пользовательское семейство шрифтов и сообщите браузеру, где его найти. */
+@font-face {
+    font-family: 'toony_loons_rus';
+    src: url('../src/fonts/toony_loons.ttf.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --blue: #00ADFF;
+    --green: #A3CD39;
+    --pink: #F8128E;
+    --orange: #F9AD00;
+    --yellow: #fff8db;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Jost", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+}
+
+/* Директивы классов */
+.container {
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* Прочие классы */
+.lock {
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.yellow-wrapper {
+    border-radius: 20px;
+    background: #fffbee;
+    padding-left: clamp(1.563rem, 0.848rem + 3.571vw, 4.063rem);
+    padding-right: clamp(1.563rem, 0.848rem + 3.571vw, 4.063rem);
+}
+
+.title {
+    font-family: "toony_loons_rus", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.875rem, 1.339rem + 2.679vw, 3.75rem);
+    text-transform: uppercase;
+    color: #262626;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.gallery-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .gallery-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (min-width: 950px) {
+    .gallery-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}

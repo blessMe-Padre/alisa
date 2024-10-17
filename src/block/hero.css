@@ -1,0 +1,66 @@
+.hero {}
+
+.hero__title {
+    font-family: "toony_loons_rus", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.hero__subtitle {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.20773;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.hero__block {
+    border-radius: 20px;
+}
+
+.hero__block--red {
+    background-color: var(--pink);
+    background-image: url('../src/img/bg/img-1.png');
+    background-size: cover;
+    padding: 90px 40px 90px 85px;
+}
+
+.hero__block--yellow {
+    background-color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__block--yellow img {
+    margin-top: -60px;
+}
+
+.hero__star {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    will-change: transform;
+
+    transition: transform 0.5s ease;
+}
+
+@media (max-width: 550px) {
+    .hero__title {
+        font-size: 30px;
+    }
+
+    .hero__block--red {
+        padding: 40px 50px 40px 40px;
+    }
+
+    .hero__block--yellow img {
+        margin-top: 0px;
+    }
+
+}

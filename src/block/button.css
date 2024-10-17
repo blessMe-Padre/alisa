@@ -1,0 +1,42 @@
+.button {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    color: #fff;
+    text-align: center;
+
+    border-radius: 6px;
+    padding: 13px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.button--default {
+    width: 233px;
+}
+
+.button--blue {
+    background: #00adff;
+}
+
+.button--blue:hover,
+.button--blue:focus {
+    background: #f8128e;
+}
+
+.button--blue:active {
+    background: #f9ad00;
+}
+
+.button--orange {
+    background: #f9ad00;
+}
+
+.button--orange:hover,
+.button--orange:focus {
+    background: #f8128e;
+}
+
+.button--orange:active {
+    background: #a3cd39;
+}
