@@ -116,3 +116,11 @@
         gap: 10px;
     }
 }
+
+.balloons {
+    position: absolute;
+    top: 50%;
+    right: -150px;
+    will-change: transform;
+    transition: transform 0.5s ease;
+}

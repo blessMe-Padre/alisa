@@ -1,6 +1,4 @@
 export const initParallax = () => {
-    console.log(2222222);
-
     const wrapper = document.querySelector('.parallax');
     const layers = document.querySelectorAll('.parallax__item');
 
@@ -29,5 +27,4 @@ export const initParallax = () => {
 
     wrapper.addEventListener('mousemove', handleParallax);
     wrapper.addEventListener('mouseout', reset);
-
 } 

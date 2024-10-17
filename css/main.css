@@ -1989,6 +1989,14 @@ body {
   }
 }
 
+.balloons {
+  position: absolute;
+  top: 50%;
+  right: -150px;
+  will-change: transform;
+  transition: transform 0.5s ease;
+}
+
 .hover\:text-blue:hover{
   --tw-text-opacity: 1;
   color: rgb(0 173 255 / var(--tw-text-opacity));
