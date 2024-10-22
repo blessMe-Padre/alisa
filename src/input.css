@@ -126,7 +126,8 @@
     transition: transform 0.5s ease;
 }
 
-.price h3 {
+.price h3,
+.holiday h3 {
     font-family: "Jost", sans-serif;
     font-weight: 700;
     font-size: 30px;
@@ -138,7 +139,9 @@
 }
 
 .price h3::before,
-.price h3::after {
+.holiday h3::before,
+.price h3::after,
+.holiday h3::after {
     content: "";
     position: absolute;
     top: 0;
@@ -146,12 +149,14 @@
     height: 25px;
 }
 
-.price h3::before {
+.price h3::before,
+.holiday h3::before {
     left: -40px;
     background-image: url('../src/img/icons/quoter-left.svg');
 }
 
-.price h3::after {
+.price h3::after,
+.holiday h3::after {
     right: -40px;
     background-image: url('../src/img/icons/quoter-right.svg');
 }
@@ -160,6 +165,130 @@
     position: absolute;
     top: 50%;
     right: -30px;
+    will-change: transform;
+    transition: transform 0.5s ease;
+}
+
+.important {
+    background-color: var(--yellow);
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+}
+
+.important h2 {
+    display: inline-block;
+
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+
+    border-radius: 43px;
+    background: #f8128e;
+    padding: 0 20px;
+}
+
+.important li {
+    position: relative;
+    padding-left: 15px;
+}
+
+.important li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-radius: 2px;
+    width: 8px;
+    height: 8px;
+    transform: translateY(-50%);
+    background: #f9ad00;
+}
+
+.important li:nth-child(even):before {
+    background: #00adff;
+}
+
+.important__decor {
+    position: absolute;
+    top: 30%;
+    right: -30px;
+    will-change: transform;
+    transition: transform 0.5s ease;
+}
+
+.holiday__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 25px;
+    margin-bottom: 30px;
+}
+
+.holiday__header-title {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #262626;
+    text-align: left;
+}
+
+.holiday__header-button {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.06em;
+    color: #fff;
+
+    border-radius: 87px;
+    background: #f8128e;
+    padding: 5px 20px;
+}
+
+.holiday ul {
+    text-align: left;
+    padding: 0 25px;
+}
+
+.holiday li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.holiday li::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: -20px;
+    width: 9px;
+    height: 9px;
+}
+
+.holiday li:nth-child(1):before {
+    background: #f9ad00;
+}
+
+.holiday li:nth-child(2):before {
+    background: #f8128e;
+}
+
+.holiday li:nth-child(3):before {
+    background: #00adff;
+}
+
+.holiday li:nth-child(4):before {
+    background: #a3cd39;
+}
+
+.holiday__decor {
+    position: absolute;
+    top: 0;
+    left: -30px;
     will-change: transform;
     transition: transform 0.5s ease;
 }
