@@ -1,21 +1,22 @@
 export const initParallax = () => {
-    const wrapper = document.querySelector('.parallax');
+    const wrappers = document.querySelectorAll('.parallax');
     const layers = document.querySelectorAll('.parallax__item');
-
     const handleParallax = (evt) => {
         //размер области просмотра
-        const parallaxLeftOffset = wrapper.getBoundingClientRect().left;
-        const parallaxTopOffset = wrapper.getBoundingClientRect().top;
+        wrappers.forEach(item => {
+            const parallaxLeftOffset = item.getBoundingClientRect().left;
+            const parallaxTopOffset = item.getBoundingClientRect().top;
+            // координаты центра экрана
+            const coordX = evt.clientX - parallaxLeftOffset - 0.5 * item.offsetWidth;
+            const coordY = evt.clientY - parallaxTopOffset - 0.5 * item.offsetHeight;
 
-        // координаты центра экрана
-        const coordX = evt.clientX - parallaxLeftOffset - 0.5 * wrapper.offsetWidth;
-        const coordY = evt.clientY - parallaxTopOffset - 0.5 * wrapper.offsetHeight;
-
-        layers.forEach((layer) => {
-            const layerSpeed = layer.dataset.speed;
-            const x = - (coordX * layerSpeed).toFixed(2);
-            const y = - (coordY * layerSpeed).toFixed(2);
-            layer.setAttribute('style', `transform: translate(${x}px, ${y}px);`)
+            const layers = item.querySelectorAll('.parallax__item');
+            layers.forEach((layer) => {
+                const layerSpeed = layer.dataset.speed;
+                const x = - (coordX * layerSpeed).toFixed(2);
+                const y = - (coordY * layerSpeed).toFixed(2);
+                layer.setAttribute('style', `transform: translate(${x}px, ${y}px);`)
+            });
         });
     };
 
@@ -25,6 +26,8 @@ export const initParallax = () => {
         });
     }
 
-    wrapper.addEventListener('mousemove', handleParallax);
-    wrapper.addEventListener('mouseout', reset);
-} 
+    wrappers.forEach(item => {
+        item.addEventListener('mousemove', handleParallax);
+        item.addEventListener('mouseout', reset);
+    });
+}

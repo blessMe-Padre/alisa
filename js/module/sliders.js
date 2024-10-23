@@ -25,7 +25,8 @@ export const initSlider = () => {
             },
 
             pagination: {
-                el: ".swiper-pagination",
+                el: '.swiper-pagination-feedback',
+                type: 'bullets',
                 clickable: true
             },
         });
